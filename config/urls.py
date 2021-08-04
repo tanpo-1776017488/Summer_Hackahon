@@ -22,4 +22,5 @@ urlpatterns = [
     url(r'^accounts/', include('allauth.urls')),
     path('',v.home,name='home'),
     path('log/',v.log,name='log'),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 ]

@@ -34,6 +34,9 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     # `allauth` specific authentication methods, such as login by e-mail
     'allauth.account.auth_backends.AuthenticationBackend',
+    'social_core.backends.kakao.KakaoOAuth2',
+    'social_core.backends.google.GoogleOAuth2',
+    
     
 )
 INSTALLED_APPS = [
@@ -51,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.staticfiles',
     'accounts.apps.AccountsConfig',
-    
+    'social_django',
 ]
 SITE_ID = 2
 
@@ -63,6 +66,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware', 
 ]
 
 ROOT_URLCONF = 'config.urls'
@@ -78,6 +82,8 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',  # <-- 끝에 추가
+                'social_django.context_processors.login_redirect', # <-- 끝에 추가
             ],
         },
     },
@@ -138,3 +144,4 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = 'log' # 로그인 후 리디렉션할 페이지
 ACCOUNT_LOGOUT_REDIRECT_URL = "log"  # 로그아웃 후 리디렉션 할 페이지
 ACCOUNT_LOGOUT_ON_GET = True # 로그아웃 버튼 클릭 시 자동 로그아웃
+

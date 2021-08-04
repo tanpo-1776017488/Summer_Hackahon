@@ -1,3 +1,5 @@
+{% load socialaccount %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,5 +10,6 @@
 </head>
 <body>
     <h1>로그인성공</h1>
+    <h2>Uid : {{user.socialaccount_set.all.0.uid}}</h2>
 </body>
 </html>
