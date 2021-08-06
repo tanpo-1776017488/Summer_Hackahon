@@ -53,6 +53,7 @@ body{
 
 .bottom-img img{
     width: 30%;
+    height: 100%;
     margin: 10px;
     
 }
@@ -94,6 +95,8 @@ body{
 
 .bottom-review{
     margin-top: 100px;
+    padding-bottom: 100px;
+    background-color: rgb(228, 233, 221);
 }
 
 .bottom-review div{
@@ -103,4 +106,64 @@ body{
 .bottom-review img{
     width: 200px;
     height: 200px;
+    margin: 0;
+    padding: 0;
+}
+
+.main-con{
+    background-color: white;
+    text-align: center;
+    margin: 20px 80px;
+}
+
+.bottom-wrap-base{
+    height: 80px;
+    background-color: rgb(228, 233, 221);
+}
+
+.navbar{
+    display: flex;
+    flex-direction: row;
+    height: 80px;
+    margin: 0 80px;
+    align-items: center;
+}
+
+.base-container{
+    background-color: rgb(228, 233, 221);
+    width: 95%;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+.navbar-btn{
+    /* 상단바 버튼 */
+}
+
+.review-list{
+    background-color: white;
+    width: 200px;
+    height: 330px;
+    margin: 0;
+    padding: 0;
+}
+
+.diary img{
+    width: 700px;
+
+}
+
+.diary{
+    width: 80%;
+    margin: 0 auto;
+}
+
+.login-wrap img{
+    width: 191px;
+    height: 46px;
+}
+
+.login-wrap{
+    background-color: rgb(244, 246, 241);
 }

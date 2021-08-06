@@ -1,0 +1,44 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+    <div class="btn-wrap">
+        <h1>여행을 기록해주세요</h1>
+        <button>새로 작성하기</button>
+        <button>기존 일정 불러오기</button>
+    </div>
+    <div class="register-wrap">
+        <table>
+            <tr>
+                <td>제목</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>여행 지역</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>여행 일자</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>여행 예산</td>
+                <td></td>
+            </tr>
+        </table>
+        <form action="#">
+            <div class="form-wrap">
+                <input type="radio" value="first" name="first">
+                <label for="first">첫번째 일정</label>
+                <textarea name="" id="" cols="120" rows="20"></textarea>
+                <button>사진 추가</button>
+            </div>
+            <div class="form-wrap">
+                <input type="radio" value="second" name="second">
+                <label for="second">두번째 일정</label>
+                <textarea name="" id="" cols="120" rows="20"></textarea>
+                <button>사진 추가</button>
+            </div>
+            <input type="submit" value="제출하기">
+        </form>
+    </div>
+{% endblock %}
