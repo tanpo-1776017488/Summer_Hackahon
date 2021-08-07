@@ -12,3 +12,6 @@ def login(request):
 
 def register_review(request):
     return render(request, 'register_review.html')
+
+def register_travel(request):
+    return render(request, 'register_travel.html')

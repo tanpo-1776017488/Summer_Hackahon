@@ -24,4 +24,5 @@ urlpatterns = [
     path("review/", myapp.views.review, name="review"),
     path("login/", myapp.views.login, name="login"),
     path("register_review/", myapp.views.register_review, name="register_review"),
+    path('register_travel/', myapp.views.register_travel, name="register_travel"),
 ]
