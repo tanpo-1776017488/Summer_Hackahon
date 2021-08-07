@@ -176,7 +176,7 @@ function addPlanMarker(position){ //마커 찍기(한개만)
 }
 
 //위치 배열, 교통수단 정보 가져와서 맵에 표시 (이미 DB에 저장된 일정)
-function schduleMark(locations, map)
+function schduleMark(locations, map) //여기 위치 이름정보 추가, 인포드로우 생성
 {
     //마커
     mymarkers = [];
@@ -236,8 +236,6 @@ function addPlan(marker) //DB에 새로 찍은 핀 위치 넘겨주기, 저장 �
 
             schduleMark(linePath,map); //다시 선찍기
         }
-
-        marker = null;
 
     return marker.position //위치정보 반환
     }
@@ -343,7 +341,6 @@ for ( var i=0; i<places.length; i++ ) {
         });
 
         
-
         itemEl.onmouseover =  function () {
             displayInfowindow(marker, title);
         };
