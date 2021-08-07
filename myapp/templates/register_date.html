@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<form action="#">
+    <div class="sch-wrap">
+        <h1>여행 상세 일정을 알려주세요!</h1>
+        <label for="place">여행지</label>
+        <input type="text" name="place">
+        <label for="date">여행일자</label>
+        <input type="text" name="date">
+        ~
+        <input type="text" name="date">
+        <input type="submit" value="다음">
+    </div>
+    
+</form>
+{% endblock %}

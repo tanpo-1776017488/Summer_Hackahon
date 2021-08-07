@@ -34,7 +34,15 @@ def done_list(request):
 def like_list(request):
     return render(request, 'like_list.html')
 
-def Blogdeatil(request,id):
-    blog = get_object_or_404(Blog, pk = id)
-    return render(request, 'review.html',{'blog':blog})
+def Blogdeatil(request):
+    #blog = get_object_or_404(Blog, pk = id)
+    return render(request, 'review.html')
     
+def register_review_new(request):
+    return render(request, 'register_review_new.html')
+
+def register_date(request):
+    return render(request, 'register_date.html')
+
+def register_chr(request):
+    return render(request, 'register_chr.html')

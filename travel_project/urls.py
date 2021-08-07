@@ -22,7 +22,7 @@ import myapp.views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", myapp.views.main, name="main"),
-    path('<str:id>', myapp.views.review, name="review"), #리뷰 상세 path converter
+    path('review/', myapp.views.review, name="review"), #리뷰 상세 path converter
     path("login/", myapp.views.login, name="login"),
     path("register_review/", myapp.views.register_review, name="register_review"),
     path('register_travel/', myapp.views.register_travel, name="register_travel"),
@@ -32,4 +32,7 @@ urlpatterns = [
     path('schd_list/', myapp.views.schd_list, name='schd_list'),
     path('done_list/', myapp.views.done_list, name='done_list'),
     path('like_list/', myapp.views.like_list, name="like_list"),
+    path('register_review_new/', myapp.views.register_review_new, name='register_review_new'),
+    path('register_date/', myapp.views.register_date, name='register_date'),
+    path('register_chr/', myapp.views.register_chr, name='register_chr'),
 ]
