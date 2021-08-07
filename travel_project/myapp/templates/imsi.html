@@ -277,11 +277,11 @@ for ( var i=0; i<places.length; i++ ) {
             infowindow.close();
         });
 
-
         kakao.maps.event.addListener(marker, 'click', function(mouseEvent) { //맵 클릭 이벤트          
             infowindow.close();
             removeMarker();
-            addPlanMarker(mouseEvent.latLng);
+            window.alert(title);
+            addPlanMarker(marker.getPosition());
         });
 
         
