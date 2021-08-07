@@ -33,6 +33,7 @@ body{
 
 .main-text{
     position: absolute;
+    display: flex;
     margin-top: 80px;
     height: 100%;
     width: 43%;
@@ -40,6 +41,13 @@ body{
     left: 0;
     z-index: 1;
     background-color: rgba(255, 255, 255, 0.349);
+}
+
+.main-text p{
+    margin: 250px 50px;
+    color: white;
+    font-size: xx-large;
+    font-weight: bold;
 }
 
 .bottom-wrap{
@@ -72,6 +80,20 @@ body{
     text-align: center;
 }
 
+.bottom-button p{
+    font-weight: bold;
+}
+
+.bottom-button a{
+    font-weight: bold;
+    font-size: large;
+    text-decoration: none;
+}
+
+.bottom-review h3{
+    margin-left: 50px;
+}
+
 .first-img{
     position: absolute;
     top: 150px;
@@ -99,10 +121,6 @@ body{
     background-color: rgb(228, 233, 221);
 }
 
-.bottom-review div{
-    
-}
-
 .bottom-review img{
     width: 200px;
     height: 200px;
@@ -111,9 +129,20 @@ body{
 }
 
 .main-con{
-    background-color: white;
+    background-color: rgb(245, 247, 243);
     text-align: center;
     margin: 20px 80px;
+    padding-bottom: 40px;
+}
+
+.main-con h1{
+    padding: 80px;
+}
+
+.main-con table{
+    margin: 0 80px;
+    font-weight: bold;
+    border-spacing: 0 20px;
 }
 
 .bottom-wrap-base{
@@ -127,6 +156,14 @@ body{
     height: 80px;
     margin: 0 80px;
     align-items: center;
+    text-decoration: none;
+}
+
+.navbar-title a{
+    text-decoration: none;
+    font-weight: bold;
+    color: black;
+    margin-right: 550px;
 }
 
 .base-container{
@@ -137,8 +174,19 @@ body{
     margin: 0 auto;
 }
 
+
 .navbar-btn{
     /* 상단바 버튼 */
+    text-decoration: none;
+}
+
+.navbar-btn a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    margin: 10px;
+    
+    
 }
 
 .review-list{
@@ -156,7 +204,16 @@ body{
 
 .diary{
     width: 80%;
-    margin: 0 auto;
+    margin: 80px auto;
+}
+
+.diary h4{
+    text-align: left;
+    margin: 40px 0;
+}
+
+.diary p{
+    margin: 20px;
 }
 
 .login-wrap img{
@@ -165,5 +222,110 @@ body{
 }
 
 .login-wrap{
+    width: 400px;
+    height: 400px;
     background-color: rgb(244, 246, 241);
+    margin: 0 auto;
+    
+}
+
+.login-wrap h1{
+    text-align: center;
+    
+    padding: 60px;
+}
+
+.login-btn{
+    width: 196px;
+    margin: 0 auto;
+}
+
+.title{
+    position: absolute;
+    top: -40px;
+    left: 450px;
+    z-index: 2;
+    text-align: center;
+    font-size: 50px;
+}
+
+.liked{
+    text-align: right;
+    margin: 0 80px;
+}
+
+.btn-wrap{
+    background-color: rgb(248, 250, 247);
+    margin: 0 auto;
+    width: 600px;
+    height: 200px;
+    text-align: center;
+    
+}
+
+.btn-wrap h1{
+    padding: 40px;
+}
+
+.btn-wrap a{
+    text-decoration: none;
+    color: white;
+    margin: 0 20px;
+    background-color: rgb(94, 94, 94);
+    padding: 10px;
+}
+
+.register-wrap{
+    width: 90%;
+    margin: 40px auto;
+    padding-bottom: 80px;
+    background-color: rgb(245, 247, 243);
+}
+
+.register-wrap table{
+    padding: 40px 80px;
+    font-weight: bold;
+    border-spacing: 0 20px;
+}
+
+.register-wrap input{
+    height: 30px;
+    margin-left: 10px;
+}
+
+.form-wrap button{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(94, 94, 94);
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    float: right;
+}
+
+.register-wrap form{
+    position: relative;
+}
+
+
+.register-wrap >form> button{
+    width: 80px;
+    height: 30px;
+    background-color: rgb(94, 94, 94);
+    color: white;
+    position: absolute;
+    left: 50%;
+    
+}
+
+.form-wrap{
+    width: 80%;
+    margin: 0 auto;
+    font-weight: bold;
+    overflow: hidden;
+}
+
+.form-wrap input{
+    height: 30px;
+    margin: 10px;
 }
