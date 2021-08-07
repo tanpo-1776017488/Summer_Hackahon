@@ -167,8 +167,10 @@ function addPlan(marker) //DB에 새로 찍은 핀 위치 넘겨주기, 저장 �
         return -1;
     }
     else{
-        window.alert(marker.getPosition()+" "+mymarkers[(mymarkers.length)-1].getPosition())
-        if(mymarkers[(mymarkers.length)-1].getPosition() == marker.getPosition())
+        var a = marker.getPosition();
+        var a2 = mymarkers[(mymarkers.length)-1].getPosition();
+        
+        if(a.getLat() == a2.getLat() && a.getLng() == a2.getLng()) //동일 위치인가 비교
         {
             window.alert("이미 저장된 위치입니다.");
         }
