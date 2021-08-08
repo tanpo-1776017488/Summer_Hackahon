@@ -9,7 +9,10 @@
     <title>Document</title>
 </head>
 <body>
+   
     <div class="container">
+        <!-- 로고 중앙에 맞춤 -->
+    <h1 class="title" style="margin-left:10%">traveler</h1>
         <div class="main-wrap">
             <div class="main-img"><img src="{% static 'main.jpg' %}" alt=""></div>
             
@@ -33,16 +36,16 @@
                 
             </div>
             <div class="bottom-review">
-                <p>다른 유저 일정 둘러보기</p>
-
-                <!--여기 남의 유저 일정 넣기-->
-                <!-- {%for blog in blog %} -->
-                <div class="review-list">
-                    <img src="http://placehold.it/200x200" alt="">
-                    <h1>title</h1>
-                    <h3>username</h3>
+                <h3>다른 유저 일정 둘러보기</h3>
+                <br>
+                <br>
+                {% for utrip in tripList %}
+                <div class="sch-list">
+                <img src="{{utrip.rep_img.url}}" alt="">
+                <h2>{{utrip.title}}</h2>
+                <h4><div class="heart"><i class="fas fa-heart"></i></div>{{urip.user.username}}</h4>
                 </div>
-                <!-- {% endfor %} -->
+                {% endfor %}
             </div>
         </div>
     </div>

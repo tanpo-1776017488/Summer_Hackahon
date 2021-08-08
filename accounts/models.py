@@ -15,6 +15,7 @@ class profile(models.Model):
     point=models.IntegerField(default=0,null=True,blank=True)
     email=models.EmailField(max_length=128,verbose_name='사용자이메일',null=True,blank=True)#email은 카카오와 구글에서 따로 제공하지 않는듯함.
     img=models.ImageField(null=True,blank=True,default='default.png')
+    p_num=models.IntegerField(default=0,null=True)
 
 #여행 계획 세우기
 class myplan(models.Model):
@@ -39,16 +40,20 @@ class VisitPos(models.Model):
 
 #리뷰쓰는 페이지
 class tripList(models.Model):
+    owner=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     title=models.CharField(max_length=30)
+    subtitle=models.CharField(max_length=30,default='부제')
     city=models.CharField(max_length=15)
     start_date=models.CharField(max_length=20)
     end_date=models.CharField(max_length=20)
-    budget=models.IntegerField(default=5)
+    budget=models.IntegerField(default=5,null=True,blank=True)
+    rep_img=models.ImageField(default='default.png',upload_to='accounts/')
+    content=models.TextField(default='abc',null=True,blank=True)
 #해당 리뷰에 대해서 one-to-many 관계로 구성, 사진은 아마 한 장씩밖에 안될 듯?-> 여러 장 하려면 할 수는 있음.
 class tribDetail(models.Model):
     owner=models.ForeignKey(tripList,on_delete=models.CASCADE)
     title=models.CharField(max_length=20)
-    img=models.ImageField(upload_to='accounts/',verbose_name='여행 이미지',blank=True,null=True)# need to change upload path
+    img=models.ImageField(upload_to='accounts/',verbose_name='여행 이미지',blank=True,null=True,default='default.png')# need to change upload path
     content=models.TextField()
 
 #이미지 구하면 바로 만들 것.
@@ -71,7 +76,7 @@ def save_user_profile(sender,instance,**kwargs):
 @receiver(post_save,sender=myplan)
 def create_visitpos(sender,instance,created,**kwargs):
     if created:
-        VisitPos.objects.create(user=instance)
+        VisitPos.objects.create(owner=instance)
 @receiver(post_save,sender=myplan)
 def save_visitpos(sender,instance,**kwargs):
     instance.visitpos.save()

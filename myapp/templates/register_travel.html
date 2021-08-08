@@ -3,34 +3,39 @@
 {% block contents %}
 
 
-    {% csrf_token %}
-    <div>
+    
+    <br>
+        <br>
+
+    <div class="travel-wrap">
+        
+
         <h1>본격적으로 여행을 계획해볼까요?</h1>
         <h4>첫 번째, 출발지와 도착지를 연결해주세요</h4>
-        <br>
+        
         <h4>두 번째, 이용하실 교통수단에 체크해주세요</h4>
         <br>
-        <br>
         <h4>마지막으로 일정 추가를 하고,  필요한 메모를 남겨보세요!</h4>
+    </div>
         <div >
             <div class="map_wrap">
                 <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div>
                 <ul id="category">
                     <li id="FD6" data-order="0"> 
                         <span class="category_bg bank"></span>
-                        음식점
+                        은행
                     </li>       
                     <li id="AT4" data-order="1"> 
                         <span class="category_bg mart"></span>
-                        관광명소
+                        쇼핑
                     </li>  
                     <li id="AD5" data-order="2"> 
                         <span class="category_bg pharmacy"></span>
-                        숙박
+                        의료시설
                     </li>  
                     <li id="CT1" data-order="3"> 
                         <span class="category_bg oil"></span>
-                        문화시설
+                        주유소
                     </li>  
                     <li id="CE7" data-order="4"> 
                         <span class="category_bg cafe"></span>
@@ -38,7 +43,7 @@
                     </li>  
                     <li id="SW8" data-order="5"> 
                         <span class="category_bg store"></span>
-                        지하철역
+                        편의점
                     </li>      
                 </ul>
                 <div id="menu_wrap" class="bg_white">
@@ -56,39 +61,38 @@
                 </div>
             </div>
         </div>
-        <button onclick = "schduleMark(linePath,map)">함수 확인</button>
-        <button onclick = "addPlan(marker)">함수 확인2</button>
-<form action action="{%url 'done_list'%}" method='POST'>
+        <div class="map-btn">
+            <button onclick = "addPlan(marker)">추가</button>
+        </div>
+        
+        <form action action="{%url 'done_list'  %}" method='GET'>
+            {% csrf_token %}
         <div class="character">
-            <img src="{{user.profile.img.url}}" alt="">
-            {{user.profile.img.url}}
+            <div class="ch-userinfo">
+                <img src="{{user.profile.img.url}}" alt="">
             <h3>{{user.username}}</h3>
             <!-- need to query search -->
             <h2>상태</h2>
             <p>체력</p>
             <p>식욕</p>
-            <p>예산</p>
+            </div>
+            
+            <div class="memo-wrap">
+                <div class="memo">memo</div>
+                <textarea name="" id="" cols="30" rows="10"></textarea>
+                
+            </div>
+            
         </div>
-    </div>
-    <div class="time-table">
-        <h3>예상지출</h3>
-        <input type="text">
-        <div class="memo-wrap">
-            <div class="memo">memo</div>
-            <textarea name="" id="" cols="30" rows="10"></textarea>
-        </div>
-        <input type="submit">
-    </div>
+        <div class="mini-con"><button>저장</button></div>
+        
+    
 </form>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=5a25871b53033081c1b1419072e8f16d&libraries=services&libralies=services"></script>
 <script>
 
-var linePath = [
-    new kakao.maps.LatLng(33.452344169439975, 126.56878163224233),
-    new kakao.maps.LatLng(33.452739313807456, 126.5709308145358),
-    new kakao.maps.LatLng(33.45178067090639, 126.5726886938753) 
-];
+var linePath = [];
 
 var marker = null; //다음 행선지
 var markers = []; //검색 마커들
@@ -117,7 +121,6 @@ var ps = new kakao.maps.services.Places(map);
 var infowindow = new kakao.maps.InfoWindow({zIndex:1});
 
 // 키워드로 장소를 검색합니다
-searchPlaces();
 
 kakao.maps.event.addListener(map, 'click', function(mouseEvent) { //맵 클릭 이벤트          
     addPlanMarker(mouseEvent.latLng)
@@ -147,13 +150,16 @@ function schduleMark(locations, map) //여기 위치 이름정보 추가, 인포
     mymarkers = [];
     for(var i=0;i<locations.length;i++)
     {
+        
         var imsimarker = new kakao.maps.Marker({ //위치 정보에 따른 마커생성
+        
         position : locations[i],
         clickable: true
         });
 
         imsimarker.setMap(map);
         mymarkers.push(imsimarker); //마커 배열에 저장
+        //console.log(locations[i])
     }
     //선
     showLine()
@@ -162,6 +168,7 @@ function schduleMark(locations, map) //여기 위치 이름정보 추가, 인포
 function setLine(map){ //선긋기
 
     polyline = [];
+    
     for (var i =0; i<mymarkers.length;i++)
     {
         if(i!=0){
@@ -188,12 +195,21 @@ function addPlan(marker) //DB에 새로 찍은 핀 위치 넘겨주기, 저장 �
         return -1;
     }
     else{
-        var a = marker.getPosition();
+        if(mymarkers.length>0)
+        {
+            var a = marker.getPosition();
         var a2 = mymarkers[(mymarkers.length)-1].getPosition();
         
         if(a.getLat() == a2.getLat() && a.getLng() == a2.getLng()) //동일 위치인가 비교
         {
             window.alert("이미 저장된 위치입니다.");
+        }
+        else{
+            mymarkers.push(marker); //기존 행선지 배열에 저장
+            linePath.push(marker.getPosition());
+
+            schduleMark(linePath,map); //다시 선찍기
+        }
         }
         else{
             mymarkers.push(marker); //기존 행선지 배열에 저장

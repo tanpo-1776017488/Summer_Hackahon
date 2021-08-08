@@ -1,10 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
+<br>
+<br>
+<br>
+<br>
+
+<div class="list-tag">
 <a href="{% url 'user-info'%}">내 정보</a>
 <a href="{% url 'schd_list'%}">여행 일정</a>
 <a href="{% url 'like_list'%}">찜한 일정</a>
-<div class="user-wrap">
+</div>
+<div class="list-wrap">
     <form action="#">
         <img src="http://placehold.it/200x200" alt="">
         <table>
@@ -21,29 +28,34 @@
                 {% endif %}
             </tr>
         </table>
+        <br>
         <h3>보유포인트:1300p</h3>
+        <br>
+        <hr>
         <div class="chr-choose">
             <table>
                 <tr>
-                    <td><img src="http://placehold.it/200x200" alt="">
-                    호박고구마
-                    <input type="button" value="구매"></td>
-                    <td><img src="http://placehold.it/200x200" alt="">
-                    호박고구마
-                    <input type="button" value="구매"></td>
+                    <td><img src="{% static 'goguma.jpg' %}" alt="">
+                    
+                    </td>
+                    <td><img src="{% static 'h.jpg' %}" alt="">
+                    
+                    </td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td>호박고구마</td>
+                    <td>안녕</td>
                 </tr>
                 <tr>
-                    <td></td>
-                    <td></td>
+                    <td><input type="button" value="구매"></td>
+                    <td><input type="button" value="구매"></td>
                 </tr>
             </table>
+            <input type="submit" value="저장하기">
         </div>
-        <input type="submit" value="저장하기">
+        
     </form>
     
 </div>
+<div class="mini-con"></div>
 {% endblock %}
