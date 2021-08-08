@@ -1,39 +1,32 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
+<br>
+<br>
+<br>
+<br>
+<div class="list-tag">
 <a href="{% url 'user-info'%}">내 정보</a>
 <a href="{% url 'schd_list'%}">여행 일정</a>
 <a href="{% url 'like_list'%}">찜한 일정</a>
-<div class="user-wrap">
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
-    <div class="like-list">
-        <img src="http://placehold.it/200x200" alt="">
-        <h3>title</h3>
-        <h4>username</h4>
-    </div>
 </div>
+<div class="list-wrap">
+    
+    <div class="done-con">
+        <br>
+        <br>
+        <div class="schd-con">
+            <div class="sch-list">
+                <img src="http://placehold.it/200x200" alt="">
+                <h2>title</h2>
+                <h4><div class="heart"><i class="fas fa-heart"></i></div>username</h4>
+            </div>
+            
+            
+        </div>
+        
+    </div>
+    
+</div>
+<div class="mini-con"></div>
 {% endblock %}

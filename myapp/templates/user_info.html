@@ -1,10 +1,24 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
-<a href="{% url 'user-info'%}">내 정보</a>
+<br>
+<br>
+<br>
+<br>
+
+<div class="list-tag">
+    <a href="{% url 'user-info'%}">내 정보</a>
 <a href="{% url 'schd_list'%}">여행 일정</a>
 <a href="{% url 'like_list'%}">찜한 일정</a>
-<div class="user-wrap">
+</div>
+
+
+<div class="list-wrap">
+    <br>
+    <br>
+    <br>
+    <br>
+    <div class="user-info">
     <img src="http://placehold.it/200x200" alt="">
     <table>
         <tr>
@@ -20,6 +34,11 @@
             {% endif %}
         </tr>
     </table>
-    <a href="{% url 'user_mod'%}">수정하기</a>
+    <div class="mod">
+        <a href="{% url 'user_mod'%}">수정하기</a>
+    </div>
+    
 </div>
+</div>
+<div class="mini-con"></div>
 {% endblock %}

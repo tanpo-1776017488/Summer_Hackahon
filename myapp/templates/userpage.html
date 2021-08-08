@@ -1,6 +1,10 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
+<br>
+<br>
+<br>
+<br>
 <div class="user-wrap">
     <img src="http://placehold.it/200x200" alt="">
     <!-- below need to db -->
@@ -9,12 +13,21 @@
     <p>보유포인트</p>
     <p>{{user.profile.point}}p</p>
 </div>
-<a href="{% url 'user-info'%}">내 정보</a>
+<br>
+<br>
+<div class="list-tag">
+    <a href="{% url 'user-info'%}">내 정보</a>
 <a href="{% url 'schd_list'%}">여행 일정</a>
 <a href="{% url 'like_list'%}">찜한 일정</a>
+</div>
+
+
 <div class="list-wrap">
+    <br>
+    <br>
     <div class="sch-list">
         <h3>title</h3>
     </div>
 </div>
+<div class="mini-con"></div>
 {% endblock %}
