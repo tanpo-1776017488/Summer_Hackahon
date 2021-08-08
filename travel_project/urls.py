@@ -37,7 +37,6 @@ urlpatterns = [
     path('like_list/', myapp.views.like_list, name="like_list"),
     path('register_review_new/', myapp.views.register_review_new, name='register_review_new'),
     path('register_review_choose/',myapp.views.register_review_choose, name='register_review_choose'),
-    path('register_date/', myapp.views.register_date, name='register_date'),
     path('register_chr/', myapp.views.register_chr, name='register_chr'),
     path('test/', myapp.views.test, name='test'),
 

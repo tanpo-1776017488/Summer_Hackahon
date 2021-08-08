@@ -1,8 +1,18 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
-<form action="{% url 'register_date'%}">
+<form action="{% url 'register_travel'%}">
     <div class="chr_wrap">
+
+        <div class="sch-wrap">
+            <h1>여행 상세 일정을 알려주세요!</h1>
+            <label for="place">여행지</label>
+            <input type="text" name="place">
+            <label for="date">여행일자</label>
+            <input type="text" name="start_date">~<input type="text" name="end_date">
+            <button type ="submit">다음</button>
+        </div>
+
         <h1>당신의 캐릭터를 설정해보세요</h1>
         <h3>체력</h3>
         <h5>당신의 평소 체력을 수치화해보세요!</h5>
@@ -14,8 +24,8 @@
 
         <h3>예산</h3>
         <h5>대략적인 여행 예산을 입력해주세요!</h5>
-        <input type="text">
-        <button type = "button" onclick="location.href='{% url 'register_travel' %}'">다음</button>
+        <input type="text" name="budget">
+        <button type = "submit">다음</button>
     </div>
 
 </form>

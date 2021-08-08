@@ -1,4 +1,4 @@
-from accounts.models import tribDetail, tripList
+from accounts.models import myplan, tribDetail, tripList
 from django.shortcuts import get_object_or_404, redirect, render
 from django.contrib.auth.decorators import login_required
 # Create your views here.
@@ -18,6 +18,16 @@ def register_review(request):
 #@login_required(login_url='login')
 def register_travel(request):
     #return 체력, 식욕, 예산
+    plan = myplan()
+    plan.city = request.POST['place']
+    plan.start_date = request.POST['start_date']
+    plan.end_date = request.POST['end_date']
+    
+    #식욕과 체력 입력 필요
+
+    plan.budget = request.POST['budget']
+
+    plan.save()
     return render(request, 'register_travel.html')
 
 #@login_required(login_url='login')
@@ -50,13 +60,11 @@ def register_review_new(request):
 def register_review_choose(request):
     return render(request, 'register_review_choose.html')
 
-def register_date(request):
-    # register_chr에서 받은 데이터 처리후 render
-    return render(request, 'register_date.html')
-
+#register_date에서 넘어온 데이터들 저장
 def register_chr(request):
-    if not request.user.is_authenticated:
-        return redirect('login')
+    # if not request.user.is_authenticated:
+    #     return redirect('login')
+
     return render(request, 'register_chr.html')
 
 def test(request):
