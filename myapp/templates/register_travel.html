@@ -3,7 +3,6 @@
 {% block contents %}
 
 
-<form action="{%url 'done_list'%}" method='POST'>
     {% csrf_token %}
     <div>
         <h1>본격적으로 여행을 계획해볼까요?</h1>
@@ -59,6 +58,7 @@
         </div>
         <button onclick = "schduleMark(linePath,map)">함수 확인</button>
         <button onclick = "addPlan(marker)">함수 확인2</button>
+<form action action="{%url 'done_list'%}" method='POST'>
         <div class="character">
             <img src="{{user.profile.img.url}}" alt="">
             {{user.profile.img.url}}
@@ -226,7 +226,6 @@ function hideLine(){
 function searchPlaces() {
 
 var keyword = document.getElementById('keyword').value;
-
 if (!keyword.replace(/^\s+|\s+$/g, '')) {
     alert('키워드를 입력해주세요!');
     return false;
@@ -469,11 +468,11 @@ function searchPlacesByCategory() {
     // 지도에 표시되고 있는 마커를 제거합니다
     removeMarker();
     
-    ps.categorySearch(currCategory, placesSearchCB, {useMapBounds:true}); 
+    ps.categorySearch(currCategory, placesSearchCBByCategory, {useMapBounds:true}); 
 }
 
 // 장소검색이 완료됐을 때 호출되는 콜백함수 입니다
-function placesSearchCB(data, status, pagination) {
+function placesSearchCBByCategory(data, status, pagination) {
     if (status === kakao.maps.services.Status.OK) {
 
         // 정상적으로 검색이 완료됐으면 지도에 마커를 표출합니다
@@ -493,8 +492,6 @@ function displayPlacesByCategory(places) {
 // 몇번째 카테고리가 선택되어 있는지 얻어옵니다
 // 이 순서는 스프라이트 이미지에서의 위치를 계산하는데 사용됩니다
 var order = document.getElementById(currCategory).getAttribute('data-order');
-
-
 
 for ( var i=0; i<places.length; i++ ) {
 
