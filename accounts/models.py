@@ -57,9 +57,6 @@ class UserCharacter(models.Model):
     image=models.ImageField(upload_to=None)# need to change upload path
     name=models.CharField(max_length=15)#캐릭터 이름.
 
-
-
-
 # 유저 생성시 자동으로 디테일 테이블 생성
 @receiver(post_save,sender=User)
 def create_user_profile(sender,instance,created,**kwargs):
