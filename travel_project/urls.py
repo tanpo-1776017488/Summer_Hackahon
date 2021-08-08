@@ -18,6 +18,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls import url
+from django.conf import settings
+from django.conf.urls.static import static
 import myapp.views
 
 urlpatterns = [
@@ -34,9 +36,13 @@ urlpatterns = [
     path('done_list/', myapp.views.done_list, name='done_list'),
     path('like_list/', myapp.views.like_list, name="like_list"),
     path('register_review_new/', myapp.views.register_review_new, name='register_review_new'),
+    path('register_review_choose/',myapp.views.register_review_choose, name='register_review_choose'),
     path('register_date/', myapp.views.register_date, name='register_date'),
     path('register_chr/', myapp.views.register_chr, name='register_chr'),
+    path('test/', myapp.views.test, name='test'),
+
 
     url(r'^accounts/', include('allauth.urls')),
-
 ]
+
+urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

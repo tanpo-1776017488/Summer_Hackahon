@@ -48,7 +48,7 @@ class tripList(models.Model):
 class tribDetail(models.Model):
     owner=models.ForeignKey(tripList,on_delete=models.CASCADE)
     title=models.CharField(max_length=20)
-    img=models.ImageField(upload_to=None,verbose_name='여행 이미지',blank=True,null=True)# need to change upload path
+    img=models.ImageField(upload_to='accounts/',verbose_name='여행 이미지',blank=True,null=True)# need to change upload path
     content=models.TextField()
 
 #이미지 구하면 바로 만들 것.

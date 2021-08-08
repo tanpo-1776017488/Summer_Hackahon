@@ -7,11 +7,9 @@
         <label for="place">여행지</label>
         <input type="text" name="place">
         <label for="date">여행일자</label>
-        <input type="text" name="date">
-        ~
-        <input type="text" name="date">
-        <input type="submit" value="다음">
+        <input type="text" name="date">~<input type="text" name="date">
+        <button type = "button" onclick="location.href='{% url 'register_chr' %}'">다음</button>
+        
     </div>
-    
 </form>
 {% endblock %}

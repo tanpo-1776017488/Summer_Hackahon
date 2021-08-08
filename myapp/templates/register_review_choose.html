@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+    <div class="btn-wrap">
+        <h1>여행을 기록해주세요</h1>
+        <a href="{% url 'register_review_new' %}">새로 작성하기</a>
+        <a href="{% url 'register_review'%}">기존 일정 불러오기</a>
+    </div>
+{% endblock %}

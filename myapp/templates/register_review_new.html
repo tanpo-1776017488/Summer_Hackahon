@@ -1,44 +1,44 @@
 {% extends "base.html" %}
 {% load static %}
 {% block contents %}
-    <div class="btn-wrap">
-        <h1>여행을 기록해주세요</h1>
-        <a href="#">새로 작성하기</a>
-        <a href="#">기존 일정 불러오기</a>
-    </div>
+<br>
+<br>
+<br>
+<br>
     <div class="register-wrap">
+        <form action="{% url 'test' %}" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
         <table>
             <tr>
                 <td>제목</td>
-                <td></td>
+                <td><input type="text" name="trip_title"></td>
             </tr>
             <tr>
                 <td>여행 지역</td>
-                <td></td>
+                <td><input type="text" name="trip_city"></td>
             </tr>
             <tr>
                 <td>여행 일자</td>
-                <td></td>
+                <td><input type="text" name="trip_start_date">~<input type="text" name="trip_end_date"></td>
             </tr>
             <tr>
                 <td>여행 예산</td>
-                <td></td>
+                <td><input type="text" name="trip_budget"></td>
             </tr>
         </table>
-        <form action="#">
             <div class="form-wrap">
                 <input type="radio" value="first" name="first">
-                <label for="first">첫번째 일정</label>
-                <textarea name="" id="" cols="120" rows="20"></textarea>
-                <button>사진 추가</button>
+                <input type="text" placeholder="첫번째 일정" name="detail_location_name">
+                <textarea name="detail_content" id="" cols="125" rows="20"></textarea>
+                <input type="file" name='detail_image'>
             </div>
-            <div class="form-wrap">
+            <!-- <div class="form-wrap">
                 <input type="radio" value="second" name="second">
-                <label for="second">두번째 일정</label>
-                <textarea name="" id="" cols="120" rows="20"></textarea>
+                <input type="text" placeholder="두번째 일정">
+                <textarea name="" id="" cols="125" rows="20"></textarea>
                 <button>사진 추가</button>
-            </div>
-            <input type="submit" value="제출하기">
+            </div>-->
+            <button type="submit">기록하기</button> 
         </form>
     </div>
 {% endblock %}

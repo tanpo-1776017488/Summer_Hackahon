@@ -155,3 +155,6 @@ ACCOUNT_LOGOUT_ON_GET = True
 SOCIALACCOUNT_AUTO_SIGNUP = True
 #SOCIALACCOUNT_ADAPTER='accounts.adapters.SocialAccountAdapter'
 SITE_ID=3
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
