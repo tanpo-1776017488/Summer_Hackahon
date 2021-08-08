@@ -84,8 +84,8 @@ def register_review_choose(request):
 def register_chr(request):
     # if not request.user.is_authenticated:
     #     return redirect('login')
-
-    return render(request, 'register_chr.html')
+    ch=UserCharacter.objects.all()
+    return render(request, 'register_chr.html',{'character':ch})
 
 def test(request):
     trip = tripList(owner=request.user)

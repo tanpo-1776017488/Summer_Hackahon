@@ -39,13 +39,16 @@
                 <h3>다른 유저 일정 둘러보기</h3>
                 <br>
                 <br>
-                {% for utrip in tripList %}
-                <div class="sch-list">
-                <img src="{{utrip.rep_img.url}}" alt="">
-                <h2>{{utrip.title}}</h2>
-                <h4><div class="heart"><i class="fas fa-heart"></i></div>{{urip.user.username}}</h4>
-                </div>
+                <!-- add flex control  -->
+                <div class='rev-cnt'style='display:flex;flex-direction:row'>
+                    {% for utrip in tripList %}
+                    <div class="sch-list">
+                        <img src="{{utrip.rep_img.url}}" alt="">
+                        <h2>{{utrip.title}}</h2>
+                        <h4><div class="heart"><i class="fas fa-heart"></i></div>{{urip.user.username}}</h4>
+                    </div>
                 {% endfor %}
+                </div>
             </div>
         </div>
     </div>

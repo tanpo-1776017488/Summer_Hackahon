@@ -19,6 +19,16 @@ body{
     position: relative;
 }
 
+.chr-content img:hover{
+    transform: scale(1.3);
+    transition: .5s;
+}
+.chr-content img:visited{
+    filter: brightness(70%);
+}
+
+
+
 .main-img img{
     width: 100%;
     height: 100%;
@@ -306,7 +316,7 @@ body{
     margin-top: 80px;
     
     width: 600px;
-    height: 280px;
+    height: 380px;
     text-align: center;
     float: right;
 }

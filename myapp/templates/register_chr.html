@@ -23,7 +23,16 @@
             <!-- <button type ="submit">다음</button> -->
         </div>
         <div class="chr-wrap">
-        <h1>당신의 캐릭터를 설정해보세요</h1>
+        <h3>당신의 캐릭터를 설정해보세요</h3>
+        <div class='chr-cnt' style="display: flex;flex-direction: row; margin-left : 30%">
+            {% for char in character %}
+            <div class='chr-content'>
+                <img src="{{char.image.url}}"style="height: 100px;width: 100px;">
+                <br>
+                {{char.name}}
+            </div>
+            {% endfor %}
+        </div>
         <h3>체력</h3>
         <h5>당신의 평소 체력을 수치화해보세요!</h5>
         <input type="range" value="5" min="1" max="10" name='hp'>
