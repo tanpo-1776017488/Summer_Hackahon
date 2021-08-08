@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<a href="{% url 'user-info'%}">내 정보</a>
+<a href="{% url 'schd_list'%}">여행 일정</a>
+<a href="{% url 'like_list'%}">찜한 일정</a>
+<div class="user-wrap">
+    <a href="{% url 'schd_list'%}">계획중인 일정</a>
+    |
+    <a href="{%url 'done_list'%}">완료된 일정</a>
+    <div class="schd-list">
+        <h3>부산</h3>
+        <p>2021.8.3~2021.8.4</p>
+    </div>
+    <div class="schd-list">
+        <h3>부산</h3>
+        <p>2021.8.3~2021.8.4</p>
+    </div>
+    <div class="schd-list">
+        <h3>부산</h3>
+        <p>2021.8.3~2021.8.4</p>
+    </div>
+</div>
+{% endblock %}

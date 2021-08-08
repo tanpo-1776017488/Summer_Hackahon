@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<a href="{% url 'user-info'%}">내 정보</a>
+<a href="{% url 'schd_list'%}">여행 일정</a>
+<a href="{% url 'like_list'%}">찜한 일정</a>
+<div class="user-wrap">
+    <form action="#">
+        <img src="http://placehold.it/200x200" alt="">
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" value='{{user.username}}'></td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                {% if user.profile.email %}
+                <td><input type="text" value='{{user.profile.email}}'></td>
+                {% else %}
+                <td><input type="text" value=''></td>
+                {% endif %}
+            </tr>
+        </table>
+        <h3>보유포인트:1300p</h3>
+        <div class="chr-choose">
+            <table>
+                <tr>
+                    <td><img src="http://placehold.it/200x200" alt="">
+                    호박고구마
+                    <input type="button" value="구매"></td>
+                    <td><img src="http://placehold.it/200x200" alt="">
+                    호박고구마
+                    <input type="button" value="구매"></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </div>
+        <input type="submit" value="저장하기">
+    </form>
+    
+</div>
+{% endblock %}

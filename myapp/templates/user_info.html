@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<a href="{% url 'user-info'%}">내 정보</a>
+<a href="{% url 'schd_list'%}">여행 일정</a>
+<a href="{% url 'like_list'%}">찜한 일정</a>
+<div class="user-wrap">
+    <img src="http://placehold.it/200x200" alt="">
+    <table>
+        <tr>
+            <td>이름</td>
+            <td>{{user.username}}</td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            {% if user.profile.email %}
+            <td>{{user.profile.email}}</td>
+            {% else %}
+            <td>이메일을 추가해 주세요</td>
+            {% endif %}
+        </tr>
+    </table>
+    <a href="{% url 'user_mod'%}">수정하기</a>
+</div>
+{% endblock %}

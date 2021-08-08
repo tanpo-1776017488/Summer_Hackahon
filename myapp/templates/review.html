@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block contents %}
+<div class="main-wrap">
+<div class="main-con">
+    <h1>제목</h1>
+    <table>
+        <tr>
+            <td>여행 지역</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>여행 일자</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td>여행 예산</td>
+            <td></td>
+        </tr>
+    </table>
+    <div class="diary">
+        <h4>첫번째 일정</h4>
+        <img src="{% static 'main4.jpg' %}" alt="">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    </div>
+    <div class="diary">
+        <h4>두번째 일정</h4>
+        <img src="{% static 'main4.jpg' %}" alt="">
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+    </div>
+</div>
+</div>
+<div><i class="fas fa-heart"></i>찜한 일정에 추가하기</div>
+<div class="bottom-wrap-base"></div>
+{% endblock %}

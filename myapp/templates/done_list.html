@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<a href="{% url 'user-info'%}">내 정보</a>
+<a href="{% url 'schd_list'%}">여행 일정</a>
+<a href="{% url 'like_list'%}">찜한 일정</a>
+<div class="user-wrap">
+    <form action="#">
+        <button></button>
+        <input type="text">
+    </form>
+    <a href="{% url 'schd_list'%}">계획중인 일정</a>
+    |
+    <a href="{%url 'done_list'%}">완료된 일정</a>
+    <div class="done-list">
+        <h3>title</h3>
+        <a href="#">detail</a>
+    </div>
+    <div class="done-list">
+        <h3>title</h3>
+        <a href="#">detail</a>
+    </div>
+    <div class="done-list">
+        <h3>title</h3>
+        <a href="#">detail</a>
+    </div>
+</div>
+{% endblock %}

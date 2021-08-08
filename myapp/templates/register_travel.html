@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+
+
+<form action="{%url 'done_list'%}" method='POST'>
+    {% csrf_token %}
+    <div class="map-wrap">
+        <h1>본격적으로 여행을 계획해볼까요?</h1>
+        <h4>첫 번째, 출발지와 도착지를 연결해주세요</h4>
+        <br>
+        <h4>두 번째, 이용하실 교통수단에 체크해주세요</h4>
+        <br>
+        <br>
+        <h4>마지막으로 일정 추가를 하고,  필요한 메모를 남겨보세요!</h4>
+        <div class="map">
+            <!-- 여기에 지도 -->
+        </div>
+        <div class="character">
+            <img src="{{user.profile.img.url}}" alt="">
+            {{user.profile.img.url}}
+            <h3>{{user.username}}</h3>
+            <!-- need to query search -->
+            <h2>상태</h2>
+            <p>체력</p>
+            <p>식욕</p>
+            <p>예산</p>
+        </div>
+    </div>
+    <div class="time-table">
+        <input type="radio" name="" id="">
+        <input type="text">시
+        <input type="text">분
+        ~
+        <input type="text">시
+        <input type="text">분
+        <p>영남대</p>
+        <input type="radio">
+        <input type="text">시
+        <input type="text">분
+        ~
+        <input type="text">시
+        <input type="text">분
+        <p>해운대</p>
+        <h3>예상지출</h3>
+        <input type="text">
+        <div class="memo-wrap">
+            <div class="memo">memo</div>
+            <textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+        <input type="submit">
+    </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static %}
+{% block contents %}
+<div class="user-wrap">
+    <img src="http://placehold.it/200x200" alt="">
+    <!-- below need to db -->
+    <!-- 카카오의 경우 실명이 username이 되지만 구글의 경우 되지 않음. -->
+    <h3>{{user.username}}</h3>
+    <p>보유포인트</p>
+    <p>{{user.profile.point}}p</p>
+</div>
+<a href="{% url 'user-info'%}">내 정보</a>
+<a href="{% url 'schd_list'%}">여행 일정</a>
+<a href="{% url 'like_list'%}">찜한 일정</a>
+<div class="list-wrap">
+    <div class="sch-list">
+        <h3>title</h3>
+    </div>
+</div>
+{% endblock %}
