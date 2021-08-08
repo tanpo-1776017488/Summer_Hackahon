@@ -18,17 +18,19 @@ def register_review(request):
 #@login_required(login_url='login')
 def register_travel(request):
     #return 체력, 식욕, 예산
-    plan = myplan()
-    plan.city = request.POST['place']
-    plan.start_date = request.POST['start_date']
-    plan.end_date = request.POST['end_date']
+
+    # #owner 없어서 확인 불가
+    # plan = myplan()
+    # plan.city = request.POST['place']
+    # plan.start_date = request.POST['start_date']
+    # plan.end_date = request.POST['end_date']
     
-    #식욕과 체력 입력 필요
+    # #식욕과 체력 입력 필요
 
-    plan.budget = request.POST['budget']
+    # plan.budget = request.POST['budget']
 
-    plan.save()
-    return render(request, 'register_travel.html')
+    # plan.save()
+    return render(request, 'register_travel.html') #{'plan':plan}
 
 #@login_required(login_url='login')
 def userpage(request):
@@ -78,7 +80,8 @@ def test(request):
     trip.budget = request.POST['trip_budget']
     trip.save()
 
-    # tripDetail.owner = "imsi" #수정 필요
+    #owner 없어서 결과 모르고 수정 안됨
+    # tripDetail.owner =  
     # tripDetail.title = request.POST['detail_location_name']
     # tripDetail.content = request.POST['detail_content']
     # tripDetail.img = request.FILES['detail_image'] 
