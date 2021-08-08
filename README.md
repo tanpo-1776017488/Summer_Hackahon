@@ -1,5 +1,5 @@
 ## 수정 요청 사항
-<img src='fiximg/flex_dir.png/>
+<img src='fiximg/flex_dir.png'/>
 ### 방향이 이상함.         
 ### 캐릭터 보여주는 부분은 어디있는지??-> 이 부분은 나중에 해도 될 듯. 
 ## 진행사항
