@@ -17,27 +17,29 @@ def login(request):
 @login_required(login_url='login')
 def register_review(request):
     return render(request, 'register_review.html')
+
+
 @login_required(login_url='login')
 def register_travel(request):
     
     #return 체력, 식욕, 예산
-    try:
-        plan = myplan(owner=request.user)
-        plan.title=request.GET['place']
-        plan.city = request.GET['place']
-        plan.start_date = request.GET['start_date']
-        plan.end_date = request.GET['end_date']
-        plan.hp=int(request.GET['hp'])
-        plan.eat=int(request.GET['eat'])
+    
+    plan = myplan(owner=request.user)
+    plan.title=request.GET['place']
+    plan.city = request.GET['place']
+    plan.start_date = request.GET['start_date']
+    plan.end_date = request.GET['end_date']
+    plan.hp=int(request.GET['hp'])
+    plan.eat=int(request.GET['eat'])
         #식욕과 체력 입력 필요
         #plan.budget = request.GET['budget']
-        plan.save()
-        request.user.profile.p_num=plan.pk
-        request.user.profile.save()
-    except:
-        return redirect('register_chr')
+    plan.save()
+    request.user.profile.p_num=plan.pk
+    request.user.profile.save()
+    ret_hp=plan.hp
+    ret_eat=plan.eat
     
-    return render(request, 'register_travel.html') 
+    return render(request, 'register_travel.html',{'hp':ret_hp,'eat':ret_eat}) 
 
 @login_required(login_url='login')
 def userpage(request):
@@ -53,9 +55,10 @@ def user_mod(request):
 def schd_list(request):
     plan=request.user.myplan_set.filter(is_finished=False)
     return render(request, 'schd_list.html',{'plan':plan})
-@login_required(login_url='login')
 
+@login_required(login_url='login')
 def done_list(request):
+    print('entered')
     mplan=myplan.objects.get(pk=request.user.profile.p_num)
     if mplan:
         mplan.is_finished=True
