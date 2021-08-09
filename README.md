@@ -1,3 +1,6 @@
+# Note     
+## portnum : 8000, addr : localhost:8000, superuser ID : admin PW : 1234     
+## admin계정으로 접속하면 계획중, 계획완료 정보 만들어놨음.    
 ## 수정 요청 사항
 
 <img src='fiximg/flex_dir.png' width='400px' height='300px'/>
