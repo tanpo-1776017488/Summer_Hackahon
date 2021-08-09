@@ -15,7 +15,7 @@
     <div class="navbar">
       <div class="navbar-title"><h1><a href="{% url 'main' %}">traveler</a></h1></div>
       <div class="navbar-btn">
-      <div class='nv-cnt' style="margin: 180px;">
+      <div class='nv-cnt'>
       {% if user.is_authenticated %}
         <a href="{% url 'register_chr'%}">여행 계획하기</a>
         <a href="{% url 'userpage'%}">마이페이지</a>
