@@ -1,5 +1,5 @@
 ## 수정 요청 사항
-<img src='fiximg/flex_dir.png' width='150px' height='150px'/>
+<img src='fiximg/flex_dir.png' width='400px' height='300px'/>
 
 ### 방향이 이상함. -> flex direction바꿔줫음.     
 ### 캐릭터 보여주는 부분은 어디있는지??-> 이 부분은 나중에 해도 될 듯. 
@@ -8,7 +8,7 @@
 * 리뷰쓰기 이미지 업로드 정상동작                  
 * 캐릭터 테이블 이미지 업로드 완료.                 
 * 체력, 배고픔 슬라이드 바 형태로 변경.            
-<img src='fiximg/added_chr.png' width='150px' height='150px'/>          
+<img src='fiximg/added_chr.png' width='400px' height='300px'/>          
 * 캐릭터 표시해둠.       
 
 # 결론            
