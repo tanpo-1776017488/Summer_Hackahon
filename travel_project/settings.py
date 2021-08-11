@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.environ.get('SECRET_KEY ')
+SECRET_KEY = os.environ.get('SECRET_KEY ', 'django-insecure-$ivxnqva$l#&w=&zuqx!)or-b1u&tl-h&dts8s4vy@7i#y*^_&')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = (os.environ.get("DEBUG",'True')!='False')
 
@@ -158,9 +158,9 @@ DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'# upload media 
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 AWS_REGION = 'ap-northeast-2'
 
-AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID')# 'AKIAUYUGOXJVRGYM3C32' 
-AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY')#'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'
-AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME')
+AWS_ACCESS_KEY_ID=os.environ.get('AWS_ACCESS_KEY_ID', 'AKIAUYUGOXJVRGYM3C32' )# 'AKIAUYUGOXJVRGYM3C32' 
+AWS_SECRET_ACCESS_KEY=os.environ.get('AWS_SECRET_ACCESS_KEY','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')#'H7CEX1qKokaNu+Y0n1aF3WkT20Tyq22m+ShIabZM'
+AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME','likelion-django-deploy')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 AWS_S3_SIGNATURE_VERSION='s3v4'
 AWS_S3_REGION_NAME='ap-northeast-2'
