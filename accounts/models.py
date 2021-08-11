@@ -58,7 +58,7 @@ class tribDetail(models.Model):
 
 #이미지 구하면 바로 만들 것.
 class UserCharacter(models.Model):
-    user=models.ManyToManyField(User)
+    user=models.ManyToManyField(User,null=True,blank=True)
     image=models.ImageField(upload_to=None)# need to change upload path
     name=models.CharField(max_length=15)#캐릭터 이름.
 

@@ -76,20 +76,27 @@ def like_list(request):
 #def Blogdeatil(request):
     #blog = get_object_or_404(Blog, pk = id)
     return render(request, 'review.html')
+
 @login_required(login_url='login')
 def register_review_new(request):
     return render(request, 'register_review_new.html')
 
+@login_required(login_url='login')
 def register_review_choose(request):
     return render(request, 'register_review_choose.html')
 
 #register_date에서 넘어온 데이터들 저장
+@login_required(login_url='login')
 def register_chr(request):
     # if not request.user.is_authenticated:
     #     return redirect('login')
     ch=UserCharacter.objects.all()
     return render(request, 'register_chr.html',{'character':ch})
 
+
+
+
+@login_required(login_url='login')
 def test(request):
     trip = tripList(owner=request.user)
     
@@ -112,4 +119,5 @@ def test(request):
     # tripDetail.img = request.FILES['detail_image'] 
     # tripDetail.save()
 
-    return render(request,'main.html')
+    return redirect('main')
+
