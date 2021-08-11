@@ -160,7 +160,7 @@ AWS_REGION = 'ap-northeast-2'
 
 AWS_ACCESS_KEY_ID='AKIAUYUGOXJVRGYM3C32' #os.environ.get('AWS_ACCESS_KEY_ID','AKIAUYUGOXJVRGYM3C32')
 AWS_SECRET_ACCESS_KEY='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'#os.environ.get('AWS_SECRET_ACCESS_KEY','H7CEX1qKokaNu+Y0n1aF3WkT20Tyq22m+ShIabZM')
-AWS_STORAGE_BUCKET_NAME=os.environ.get('AWS_STORAGE_BUCKET_NAME','likelion-django-deploy')
+AWS_STORAGE_BUCKET_NAME='likelion-django-deploy' #os.environ.get('AWS_STORAGE_BUCKET_NAME','likelion-django-deploy')
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.%s.amazonaws.com' % (AWS_STORAGE_BUCKET_NAME, AWS_REGION)
 AWS_S3_SIGNATURE_VERSION='s3v4'
 AWS_S3_REGION_NAME='ap-northeast-2'
