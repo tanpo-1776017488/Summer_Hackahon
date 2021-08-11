@@ -116,7 +116,7 @@ pandocfilters==1.4.3
 parso==0.8.2
 pickleshare==0.7.5
 pilkit==2.0
-Pillow @ file:///C:/ci/pillow_1615224334542/work
+Pillow==8.1.2
 pipenv==2020.11.15
 plotly==4.14.3
 prometheus-client==0.10.1
