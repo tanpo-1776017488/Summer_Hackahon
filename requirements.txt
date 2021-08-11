@@ -17,8 +17,6 @@ boto3==1.18.18
 botocore==1.21.18
 cached-property==1.5.2
 cachetools==4.2.2
-certifi==2020.12.5
-cffi @ file:///C:/ci/cffi_1613247308275/work
 channels==3.0.3
 channels-redis==3.2.0
 chardet==3.0.4
@@ -178,12 +176,6 @@ social-auth-app-django==4.0.0
 social-auth-core==4.1.0
 sqlparse==0.4.1
 synr==0.3
-tensorboard==2.5.0
-tensorboard-data-server==0.6.1
-tensorboard-plugin-wit==1.8.0
-tensorboardX==2.2
-tensorflow==2.5.0
-tensorflow-estimator==2.5.0
 termcolor==1.1.0
 terminado==0.10.0
 testpath==0.5.0
