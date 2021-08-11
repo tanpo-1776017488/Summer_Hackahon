@@ -156,7 +156,6 @@ seaborn==0.11.1
 selenium==3.141.0
 Send2Trash==1.5.0
 service-identity==18.1.0
-six @ file:///C:/ci/six_1605205426665/work
 sklearn==0.0
 social-auth-app-django==4.0.0
 social-auth-core==4.1.0
